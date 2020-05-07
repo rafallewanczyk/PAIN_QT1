@@ -11,6 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_MainWindow(object):
+    counter = 0
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1050, 556)
@@ -141,29 +142,24 @@ class Ui_MainWindow(object):
         self.scrollArea.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 144, 353))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 144, 370))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
-        # important
-        self.testowy_label3 = QtWidgets.QLabel(self.scrollAreaWidgetContents)
-        self.testowy_label3.setObjectName("testowy_label3")
-        self.verticalLayout_3.addWidget(self.testowy_label3)
-        # end
-        #important
         self.testowy_label1 = QtWidgets.QLabel(self.scrollAreaWidgetContents)
         self.testowy_label1.setObjectName("testowy_label1")
         self.verticalLayout_3.addWidget(self.testowy_label1)
-        #end
         self.testowy_label2 = QtWidgets.QLabel(self.scrollAreaWidgetContents)
         self.testowy_label2.setObjectName("testowy_label2")
         self.verticalLayout_3.addWidget(self.testowy_label2)
+        spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_3.addItem(spacerItem)
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.verticalLayout_2.addWidget(self.splitter)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
-        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout.addItem(spacerItem)
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout.addItem(spacerItem1)
         self.startButton = QtWidgets.QPushButton(self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -200,8 +196,6 @@ class Ui_MainWindow(object):
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
 
-        self.startButton.clicked.connect(self.click)
-        self.closeButton.clicked.connect(self.click_exit);
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
@@ -224,27 +218,8 @@ class Ui_MainWindow(object):
         self.label_7.setText(_translate("MainWindow", "Długość kroku"))
         self.testowy_label1.setText(_translate("MainWindow", "aaaaaaaaaaaaaaaaaaaaa"))
         self.testowy_label2.setText(_translate("MainWindow", "bbbbbbbbbbbbbbb"))
-        self.testowy_label3.setText(_translate("MainWindow", "ccccccccc"))
         self.startButton.setText(_translate("MainWindow", "Start"))
         self.closeButton.setText(_translate("MainWindow", "Zamknij"))
 
-    def click(self):
-        _translate = QtCore.QCoreApplication.translate
-        new = QtWidgets.QLabel(self.scrollAreaWidgetContents)
-        new.setObjectName("new")
-        self.verticalLayout_3.addWidget(new)
-        new.setText(_translate("MainWindow", "nowy label"))
-
-    def click_exit(self):
-        exit();
 
 
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())
