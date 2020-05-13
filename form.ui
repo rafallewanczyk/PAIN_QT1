@@ -78,12 +78,18 @@
              <property name="text">
               <string>Nie wybrano ścieżki</string>
              </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
             </widget>
            </item>
            <item row="4" column="1">
             <widget class="QLabel" name="validationLabelPath">
              <property name="text">
               <string>Nie wybrano ścieżki</string>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
@@ -112,12 +118,18 @@
              <property name="text">
               <string>Nie wybrano ścieżki</string>
              </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
             </widget>
            </item>
            <item row="3" column="1">
             <widget class="QLabel" name="validationImagePath">
              <property name="text">
               <string>Nie wybrano ścieżki</string>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
@@ -191,6 +203,12 @@
            </item>
            <item row="5" column="2">
             <widget class="QPushButton" name="loadFilesButton">
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
              <property name="text">
               <string>Wczytaj</string>
              </property>
@@ -210,31 +228,42 @@
            <string>Przykłady</string>
           </property>
           <layout class="QGridLayout" name="gridLayout">
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_3">
-             <property name="text">
-              <string>Liczba przykładów treningwych</string>
+           <item row="1" column="2">
+            <widget class="QLabel" name="maxValidation">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
              </property>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="label_4">
              <property name="text">
-              <string>Liczba przykładów walidacyhnych</string>
+              <string>Max:0</string>
              </property>
             </widget>
            </item>
            <item row="1" column="1">
-            <widget class="QLineEdit" name="validationExampleNum">
+            <widget class="QSpinBox" name="validationExampleNum">
              <property name="enabled">
               <bool>false</bool>
              </property>
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>1</number>
+             </property>
             </widget>
            </item>
-           <item row="0" column="1">
-            <widget class="QLineEdit" name="trainingExampleNum">
-             <property name="enabled">
-              <bool>false</bool>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Liczba przykładów treningwych</string>
              </property>
             </widget>
            </item>
@@ -245,10 +274,23 @@
              </property>
             </widget>
            </item>
-           <item row="1" column="2">
-            <widget class="QLabel" name="maxValidation">
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_4">
              <property name="text">
-              <string>Max:0</string>
+              <string>Liczba przykładów walidacyhnych</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="trainingExampleNum">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>1</number>
              </property>
             </widget>
            </item>
@@ -286,10 +328,30 @@
              </property>
             </widget>
            </item>
+           <item row="2" column="2">
+            <widget class="QSlider" name="momentumSlider">
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
            <item row="1" column="0">
             <widget class="QLabel" name="label_8">
              <property name="text">
               <string>Współczynnik l2</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="4">
+            <widget class="QDoubleSpinBox" name="momentum">
+             <property name="maximum">
+              <double>1.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>0.010000000000000</double>
              </property>
             </widget>
            </item>
@@ -306,47 +368,7 @@
              </property>
             </spacer>
            </item>
-           <item row="2" column="0">
-            <widget class="QLabel" name="label_10">
-             <property name="text">
-              <string>Momentum</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="1">
-            <widget class="QLineEdit" name="epochNumber"/>
-           </item>
-           <item row="2" column="1">
-            <widget class="QSlider" name="momentumSlider">
-             <property name="maximum">
-              <number>100</number>
-             </property>
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="QSlider" name="l2Slider">
-             <property name="maximum">
-              <number>100</number>
-             </property>
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="3">
-            <widget class="QDoubleSpinBox" name="momentum">
-             <property name="maximum">
-              <double>1.000000000000000</double>
-             </property>
-             <property name="singleStep">
-              <double>0.010000000000000</double>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="3">
+           <item row="1" column="4">
             <widget class="QDoubleSpinBox" name="l2">
              <property name="maximum">
               <double>1.000000000000000</double>
@@ -356,7 +378,7 @@
              </property>
             </widget>
            </item>
-           <item row="0" column="1">
+           <item row="0" column="2">
             <widget class="QSlider" name="stepSizeSlider">
              <property name="maximum">
               <number>100</number>
@@ -366,13 +388,53 @@
              </property>
             </widget>
            </item>
-           <item row="0" column="3">
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_10">
+             <property name="text">
+              <string>Momentum</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QSlider" name="l2Slider">
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="4">
             <widget class="QDoubleSpinBox" name="stepSize">
              <property name="maximum">
               <double>1.000000000000000</double>
              </property>
              <property name="singleStep">
               <double>0.010000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="4">
+            <widget class="QSpinBox" name="epoch">
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>99999999</number>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="2">
+            <widget class="QSlider" name="epochSlider">
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>1000</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
              </property>
             </widget>
            </item>
@@ -420,22 +482,15 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>260</width>
+          <width>278</width>
           <height>454</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_3">
          <item>
-          <widget class="QLabel" name="testowy_label1">
+          <widget class="QLabel" name="label_5">
            <property name="text">
-            <string>aaaaaaaaaaaaaaaaaaaaa</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="testowy_label2">
-           <property name="text">
-            <string>bbbbbbbbbbbbbbb</string>
+            <string>Proszę wczytać dane                                   </string>
            </property>
           </widget>
          </item>
