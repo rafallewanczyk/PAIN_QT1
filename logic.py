@@ -5,6 +5,7 @@ from PyQt5.QtWidgets import QFileDialog
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
 from algorithm import Data, Model
 from configuration import *
+from autor import Ui_Form
 import json
 
 
@@ -35,6 +36,12 @@ class logic(Ui_MainWindow):
 
         self.actionZapisz.triggered.connect(self.save_configuration)
         self.actionWczytaj.triggered.connect(self.open_configuration)
+
+        Form = QtWidgets.QWidget()
+        ui = Ui_Form()
+        ui.setupUi(Form)
+        self.actionO_projekcie.triggered.connect(lambda :Form.show())
+
 
         self.loadFilesButton.clicked.connect(self.loadData)
 
