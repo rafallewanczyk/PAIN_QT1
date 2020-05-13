@@ -1,0 +1,1 @@
+{"training_images_path": "C:/Users/rafal/PycharmProjects/PAIN_QT1/train-images-idx3-ubyte.gz", "training_labels_path": "C:/Users/rafal/PycharmProjects/PAIN_QT1/train-labels-idx1-ubyte.gz", "validation_images_path": "C:/Users/rafal/PycharmProjects/PAIN_QT1/t10k-images-idx3-ubyte.gz", "validation_labels_path": "C:/Users/rafal/PycharmProjects/PAIN_QT1/t10k-labels-idx1-ubyte.gz"}
