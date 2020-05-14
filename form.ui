@@ -95,6 +95,12 @@
            </item>
            <item row="3" column="0">
             <widget class="QLabel" name="label_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="text">
               <string>Zbiór walidacyjny - obrazy</string>
              </property>
@@ -148,6 +154,12 @@
            </item>
            <item row="4" column="0">
             <widget class="QLabel" name="label_12">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="text">
               <string>Zbiór walidacyjny - etykiety</string>
              </property>
@@ -189,6 +201,12 @@
            </item>
            <item row="1" column="0">
             <widget class="QLabel" name="label">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="text">
               <string>Zbiór treningowy - obrazy</string>
              </property>
@@ -196,6 +214,12 @@
            </item>
            <item row="2" column="0">
             <widget class="QLabel" name="label_11">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="text">
               <string>Zbiór treningowy - etykiety</string>
              </property>
@@ -482,7 +506,7 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>278</width>
+          <width>377</width>
           <height>454</height>
          </rect>
         </property>
@@ -612,6 +636,7 @@
      <addaction name="actionWczytaj"/>
     </widget>
     <addaction name="menuKonfiguracja"/>
+    <addaction name="actionPodgl_d"/>
    </widget>
    <widget class="QMenu" name="menuProjekt">
     <property name="title">
@@ -642,6 +667,11 @@
   <action name="actionO_projekcie">
    <property name="text">
     <string>O projekcie</string>
+   </property>
+  </action>
+  <action name="actionPodgl_d">
+   <property name="text">
+    <string>Podgląd</string>
    </property>
   </action>
  </widget>

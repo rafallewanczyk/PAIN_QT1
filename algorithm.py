@@ -71,6 +71,7 @@ class Data:
     def getSizes(self):
         return self.X.shape[0], self.v_X.shape[0]
 
+
     def is_prime(self, x):
         if x in [2, 3, 5, 7]:
             return 1
@@ -149,13 +150,15 @@ class Model():
     def predict(self, X: np.ndarray) -> np.ndarray:
         return self.__sigma(X @ self.theta)
 
-    @staticmethod
-    def evaluate(y_true: np.ndarray, y_pred: np.ndarray) -> float:
+    def evaluate(self, y_true: np.ndarray, y_pred: np.ndarray) -> float:
+        self.errors = []
         correct = 0
         total = 0
         for i in range(y_true.shape[0]):
             if y_true[i] == np.rint(y_pred[i]):
                 correct += 1
+            else:
+                self.errors.append(i)
             total += 1
         return correct / total
 
